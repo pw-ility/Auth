@@ -1,13 +1,12 @@
 ### Features:
+
 * Encryption data properties
-       * Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey}    
+    * Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey} 
 * Centralized configuration management
 * Database storage
 * Rest API's
-  
-     key value pair : http://localhost:8888/{application}-{profile}.properties     
-     JSON : http://localhost:8888/{application}/{profile}/{label}   
-    
+     * Key value pair : http://localhost:8888/{application}-{profile}.properties     
+     * JSON : http://localhost:8888/{application}/{profile}/{label}   
  * to see all the properties: http://localhost:8888/properties
  
 ### Reload configuration from server (at runtime)
