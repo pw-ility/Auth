@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: mayankmishra
+Build-Jdk: 11.0.2
+Implementation-Title: customConfig
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.ility
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/ilityConfigServer
+Created-By: Maven Integration for Eclipse
+
