@@ -1,11 +1,13 @@
-### Description:
-       
+### Features:
+- encryption data properties
+       Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey}    
+- centeralized configuration management
+- database storage
+- Rest API's
   
      key value pair : http://localhost:8888/{application}-{profile}.properties     
-     example : http://localhost:8888/pricing-default.properties      
      JSON : http://localhost:8888/{application}/{profile}/{label}   
-     example : http://localhost:8888/pricing-service/qa/qa
- 
+    
  - to see all the properties: http://localhost:8888/properties
  
 ### Assumptions: 
