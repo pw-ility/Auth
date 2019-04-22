@@ -1,14 +1,14 @@
 ### Features:
-- encryption data properties
+* encryption data properties
        Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey}    
-- centeralized configuration management
-- database storage
-- Rest API's
+* centeralized configuration management
+* database storage
+* Rest API's
   
      key value pair : http://localhost:8888/{application}-{profile}.properties     
      JSON : http://localhost:8888/{application}/{profile}/{label}   
     
- - to see all the properties: http://localhost:8888/properties
+ * to see all the properties: http://localhost:8888/properties
  
 ### Assumptions: 
 - Will be able to use Relational Database for storing the configurations
