@@ -4,10 +4,11 @@
     * Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey} 
 * Centralized configuration management
 * Database storage
+* Reload Configurations
 * Rest API's
      * Key value pair : http://localhost:8888/{application}-{profile}.properties     
      * JSON : http://localhost:8888/{application}/{profile}/{label}   
- * to see all the properties: http://localhost:8888/properties
+ * To see all the properties: http://localhost:8888/properties
  
 ### Reload configuration from server (at runtime)
 
