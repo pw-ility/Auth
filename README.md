@@ -1,8 +1,8 @@
 ### Features:
-* encryption data properties
-       Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey}    
-* centeralized configuration management
-* database storage
+* Encryption data properties
+       * Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey}    
+* Centralized configuration management
+* Database storage
 * Rest API's
   
      key value pair : http://localhost:8888/{application}-{profile}.properties     
@@ -10,13 +10,6 @@
     
  * to see all the properties: http://localhost:8888/properties
  
-### Assumptions: 
-- Will be able to use Relational Database for storing the configurations
-
-### Health Check:
-- http://localhost:8888/actuator/health
-
-
 ### Reload configuration from server (at runtime)
 
 Spring Cloud Config has a `@RefreshScope` mechanism to allow beans to be reinitialized
@@ -28,11 +21,8 @@ endpoint is called.
 curl -X POST 'http://localhost:8080/refresh'
 ```
 
-### Features:
-- encryption Maven Command to run: mvn spring-boot:run -Dcom.vin.config.encryption.key={yourKey}    
-- centeralized configuration management
-- database storage
-- 
+### Health Check:
+* http://localhost:8888/actuator/health
 
 ### Pending:
-- Security to access properties
+* Security to access properties
