@@ -1,5 +1,3 @@
-# Custom-Cloud-Config-Server
-
 ### Description:
        
   
