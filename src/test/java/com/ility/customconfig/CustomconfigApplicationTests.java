@@ -1,6 +1,5 @@
 package com.ility.customconfig;
 
-import com.ility.customconfig.Exception.ConfigServerException;
 import com.ility.customconfig.beans.AppProperty;
 import com.ility.customconfig.repo.AppPropertyRepository;
 import com.ility.customconfig.services.AppPropertyService;
@@ -12,6 +11,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.ility.customconfig.beans.AppProperty;
+import com.ility.customconfig.repo.AppPropertyRepository;
+import com.ility.customconfig.services.AppPropertyService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -52,13 +55,13 @@ public class CustomconfigApplicationTests {
 			appPropertyService.delete("ility","test","master","framework");
 			AppProperty appPropertyAfterDelete=appPropertyRepository.findOneById(appProperty.getId());
 			Assert.assertEquals(true,appPropertyAfterDelete.getDelete());
-		}catch (ConfigServerException e){
+		}catch (Exception e){
 			System.out.println(e.getMessage());
 		}
 
 	}
 
-	@Test(expected = ConfigServerException.class)
+	@Test(expected = Exception.class)
 	public void testUpdate() throws Exception{
 		//test if property id=0 or null
 		AppProperty appProperty=new AppProperty();

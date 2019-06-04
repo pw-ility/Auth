@@ -8,6 +8,6 @@ import com.ility.customconfig.beans.AppProperty;
 public interface AppPropertyService {
     List<AppProperty> showAllProperties();
     AppProperty save(AppProperty appProperty);
-    AppProperty updateById(AppProperty appProperty) throws ConfigServerException;
-    void delete(String applications,String profile,String label,String key) throws ConfigServerException;
+    AppProperty updateById(AppProperty appProperty);
+    void delete(String applications,String profile,String label,String key);
 }

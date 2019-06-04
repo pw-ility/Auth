@@ -1,13 +1,16 @@
 package com.ility.customconfig.services;
 
-import com.ility.customconfig.Exception.ConfigServerException;
+import java.util.List;
+
+import javax.persistence.NoResultException;
 import com.ility.customconfig.beans.AppProperty;
 import com.ility.customconfig.repo.AppPropertyRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.ility.customconfig.beans.AppProperty;
+import com.ility.customconfig.repo.AppPropertyRepository;
 
 @Service
 public class AppPropertyServiceImpl implements AppPropertyService {
@@ -26,19 +29,19 @@ public class AppPropertyServiceImpl implements AppPropertyService {
     }
 
     @Override
-    public AppProperty updateById(AppProperty appProperty) throws ConfigServerException {
+    public AppProperty updateById(AppProperty appProperty) {
         if(appProperty.getId()==0){
-            throw new ConfigServerException("property id can not be 0 or empty");
+            throw new NoResultException();
         }
         appPropertyRepository.save(appProperty);  //call save method to replace(update) original one
         return appProperty;
     }
 
     @Override
-    public void delete(String applications,String profile,String label,String key) throws ConfigServerException{
+    public void delete(String applications,String profile,String label,String key){
         AppProperty appProperty=appPropertyRepository.findByCriteria(applications,profile,label,key,false);
         if (appProperty==null){
-            throw new ConfigServerException("this property does not exist");
+        	throw new NoResultException();
         }
         appPropertyRepository.deleteById(appProperty.getId());
     }
