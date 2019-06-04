@@ -1,4 +1,4 @@
-package com.ility.customconfig.Exception;
+package com.ility.customconfig.exception;
 
 import lombok.NoArgsConstructor;
 

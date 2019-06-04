@@ -56,16 +56,6 @@ public class ConfigServerController extends BaseController{
         return ResponseEntity.ok(ResponseWrapper.setResponse(appPropertyService.showAllProperties(), HttpStatus.OK, HttpStatus.OK.getReasonPhrase(), null));
     }
 
-
-
-
-    @PutMapping(path="/properties", consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation("update a property")
-    public AppProperty update(@RequestBody AppProperty appProperty) throws ConfigServerException {
-
-        return appPropertyService.updateById(appProperty);
-    }
-
     @DeleteMapping("/property/{application}/{profile}/{label}/{key}")
     @ApiOperation("delete the property based for given application, profile, label, key")
     public ResponseEntity<ResponseWrapper> deleteProperty(@PathVariable("application")String application,@PathVariable("profile")String profile,@PathVariable("label")String label,@PathVariable("key")String key) throws Exception{
