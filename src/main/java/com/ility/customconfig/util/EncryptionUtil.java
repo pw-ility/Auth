@@ -27,7 +27,6 @@ public class EncryptionUtil {
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
         encryptor.setPassword(key);
         encryptor.setAlgorithm(algorithm);
-
         return keyPrefix+encryptor.encrypt(dataArray[1]);
     }
 
@@ -35,6 +34,10 @@ public class EncryptionUtil {
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
         encryptor.setPassword(key);
         encryptor.setAlgorithm(algorithm);
-        return encryptor.decrypt(encryptedData);
+        String[] dataArray=encryptedData.split("encrypted.");
+        if(dataArray.length !=2 || dataArray[1].length()==0){
+            throw new IllegalStateException("Invalid encryptedData, no values after encrypted. !!! ");
+        }
+        return encryptor.decrypt(dataArray[1]);
     }
 }

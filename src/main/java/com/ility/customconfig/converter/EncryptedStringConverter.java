@@ -10,6 +10,7 @@ import javax.persistence.AttributeConverter;
 @Component
 public class EncryptedStringConverter implements AttributeConverter<String,String> {
 
+
     private static EncryptionUtil encryptionUtil;
 
     @Autowired
@@ -24,6 +25,7 @@ public class EncryptedStringConverter implements AttributeConverter<String,Strin
 
     @Override
     public String convertToEntityAttribute(String val) {
-        return val;//.contains("encrypted.")?encryptionUtil.decrypt(val):val
+
+        return val.contains("encrypted.")?encryptionUtil.decrypt(val):val;
     }
 }
