@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.nimbusds.jwt.proc.BadJWTException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -69,6 +70,13 @@ public class BaseController {
         //ExceptionAttributes exceptionAttributes = new DefaultExceptionAttributes();
        // Map<String, Object> responseBody = exceptionAttributes.getExceptionAttributes(exception, request,HttpStatus.INTERNAL_SERVER_ERROR);
     	 return ResponseEntity.ok(ResponseWrapper.setResponse(new Object[] {} , HttpStatus.INTERNAL_SERVER_ERROR, HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), null));
+    }
+
+    @ExceptionHandler(BadJWTException.class)
+    public ResponseEntity<ResponseWrapper> handleBadJWTException(NoResultException noResultException, HttpServletRequest request) {
+        // ExceptionAttributes exceptionAttributes = new DefaultExceptionAttributes();
+        //  Map<String, Object> responseBody = exceptionAttributes.getExceptionAttributes(noResultException, request,HttpStatus.NOT_FOUND);
+        return ResponseEntity.ok(ResponseWrapper.setResponse(new Object[] {} , HttpStatus.NOT_FOUND, HttpStatus.NOT_FOUND.getReasonPhrase(), null));
     }
     
    
